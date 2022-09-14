@@ -14,11 +14,28 @@ const images = [
 ];
 
 const galleryEl = document.querySelector(".gallery");
+galleryEl.style.display = "flex";
+galleryEl.style.justifyContent = "center";
+galleryEl.style.padding = "0";
+galleryEl.style.margin = "0";
+galleryEl.style.listStyleType = "none";
 
 const imageListEl = images.map(({ url, alt }) => {
   return `<li><img src="${url}" alt="${alt}" /></li>`;
 });
 
 let markup = imageListEl.join("");
-galleryEl.innerHTML = markup;
 galleryEl.insertAdjacentHTML("beforeend", markup);
+
+const imageEl = galleryEl.querySelectorAll("img");
+imageEl.forEach((image) => {
+  image.classList.add("image");
+  image.style.height = "200px";
+});
+
+const listPointsEl = galleryEl.querySelectorAll("li");
+listPointsEl.forEach((point) => {
+  point.classList.add("point");
+  point.style.paddingLeft = "10px";
+  point.style.paddingRight = "10px";
+});

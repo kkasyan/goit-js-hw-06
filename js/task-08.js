@@ -1,4 +1,5 @@
 const form = document.querySelector("form");
+
 form.addEventListener("submit", handleSubmit);
 
 function handleSubmit(event) {
@@ -7,10 +8,15 @@ function handleSubmit(event) {
     elements: { email, password },
   } = event.currentTarget;
 
+  const userData = {
+    Email: email.value,
+    Password: password.value,
+  };
+
   if (email.value === "" || password.value === "") {
     return alert("Всі поля повинні бути заповнені!");
   }
 
-  console.log(`Email: ${email.value}, Password: ${password.value}`);
+  console.log(userData);
   event.currentTarget.reset();
 }
