@@ -24,6 +24,7 @@ function createBoxes(amount) {
 
 function destroyBoxes() {
   divStorageEl.innerHTML = "";
+  boxesMarkup = [];
 }
 
 function getRandomHexColor() {

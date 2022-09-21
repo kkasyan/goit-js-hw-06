@@ -6,9 +6,12 @@ textInput.addEventListener("blur", (event) => {
 
   const { dataset, value } = event.target;
 
-  if (inputLengthEl === value.length) {
-    textInput.classList.add("valid");
-  } else {
+  if (inputLengthEl !== value.length) {
     textInput.classList.add("invalid");
+  }
+
+  if (inputLengthEl === value.length) {
+    textInput.classList.remove("invalid");
+    textInput.classList.add("valid");
   }
 });
